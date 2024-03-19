@@ -18,11 +18,15 @@ class TodosPage extends ConsumerWidget {
       body: Consumer(
         builder: (context, ref, child) {
           var todos = ref.watch(todosProvider);
+
+          if (todos.isEmpty) {
+            return const Text("Empty task. Add to see. ");
+          }
           return ListView.builder(
               itemCount: todos.length,
               itemBuilder: (_, index) {
                 var model = todos[index];
-                debugPrint("Inside: $model");
+
                 return DisplayTodoTile(model: todos[index]);
               });
         },

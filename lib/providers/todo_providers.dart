@@ -8,8 +8,6 @@ class TodoNotifier extends StateNotifier<List<TodoModel>> {
   /// Adds new todos item
   void addNewTodo(TodoModel model) {
     state = [...state, model];
-
-    debugPrint("State: $state");
   }
 
   /// edit on the basis of id
