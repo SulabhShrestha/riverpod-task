@@ -16,9 +16,8 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$TodoModel {
-  String get firstName => throw _privateConstructorUsedError;
-  String get lastName => throw _privateConstructorUsedError;
-  int get age => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
+  String get task => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TodoModelCopyWith<TodoModel> get copyWith =>
@@ -30,7 +29,7 @@ abstract class $TodoModelCopyWith<$Res> {
   factory $TodoModelCopyWith(TodoModel value, $Res Function(TodoModel) then) =
       _$TodoModelCopyWithImpl<$Res, TodoModel>;
   @useResult
-  $Res call({String firstName, String lastName, int age});
+  $Res call({int id, String task});
 }
 
 /// @nodoc
@@ -46,23 +45,18 @@ class _$TodoModelCopyWithImpl<$Res, $Val extends TodoModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? firstName = null,
-    Object? lastName = null,
-    Object? age = null,
+    Object? id = null,
+    Object? task = null,
   }) {
     return _then(_value.copyWith(
-      firstName: null == firstName
-          ? _value.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
-              as String,
-      lastName: null == lastName
-          ? _value.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
-              as String,
-      age: null == age
-          ? _value.age
-          : age // ignore: cast_nullable_to_non_nullable
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
               as int,
+      task: null == task
+          ? _value.task
+          : task // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -75,7 +69,7 @@ abstract class _$$TodoModelImplCopyWith<$Res>
       __$$TodoModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String firstName, String lastName, int age});
+  $Res call({int id, String task});
 }
 
 /// @nodoc
@@ -89,23 +83,18 @@ class __$$TodoModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? firstName = null,
-    Object? lastName = null,
-    Object? age = null,
+    Object? id = null,
+    Object? task = null,
   }) {
     return _then(_$TodoModelImpl(
-      firstName: null == firstName
-          ? _value.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
-              as String,
-      lastName: null == lastName
-          ? _value.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
-              as String,
-      age: null == age
-          ? _value.age
-          : age // ignore: cast_nullable_to_non_nullable
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
               as int,
+      task: null == task
+          ? _value.task
+          : task // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -113,19 +102,16 @@ class __$$TodoModelImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$TodoModelImpl with DiagnosticableTreeMixin implements _TodoModel {
-  const _$TodoModelImpl(
-      {required this.firstName, required this.lastName, required this.age});
+  const _$TodoModelImpl({required this.id, required this.task});
 
   @override
-  final String firstName;
+  final int id;
   @override
-  final String lastName;
-  @override
-  final int age;
+  final String task;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'TodoModel(firstName: $firstName, lastName: $lastName, age: $age)';
+    return 'TodoModel(id: $id, task: $task)';
   }
 
   @override
@@ -133,9 +119,8 @@ class _$TodoModelImpl with DiagnosticableTreeMixin implements _TodoModel {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'TodoModel'))
-      ..add(DiagnosticsProperty('firstName', firstName))
-      ..add(DiagnosticsProperty('lastName', lastName))
-      ..add(DiagnosticsProperty('age', age));
+      ..add(DiagnosticsProperty('id', id))
+      ..add(DiagnosticsProperty('task', task));
   }
 
   @override
@@ -143,15 +128,12 @@ class _$TodoModelImpl with DiagnosticableTreeMixin implements _TodoModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TodoModelImpl &&
-            (identical(other.firstName, firstName) ||
-                other.firstName == firstName) &&
-            (identical(other.lastName, lastName) ||
-                other.lastName == lastName) &&
-            (identical(other.age, age) || other.age == age));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.task, task) || other.task == task));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, firstName, lastName, age);
+  int get hashCode => Object.hash(runtimeType, id, task);
 
   @JsonKey(ignore: true)
   @override
@@ -162,16 +144,12 @@ class _$TodoModelImpl with DiagnosticableTreeMixin implements _TodoModel {
 
 abstract class _TodoModel implements TodoModel {
   const factory _TodoModel(
-      {required final String firstName,
-      required final String lastName,
-      required final int age}) = _$TodoModelImpl;
+      {required final int id, required final String task}) = _$TodoModelImpl;
 
   @override
-  String get firstName;
+  int get id;
   @override
-  String get lastName;
-  @override
-  int get age;
+  String get task;
   @override
   @JsonKey(ignore: true)
   _$$TodoModelImplCopyWith<_$TodoModelImpl> get copyWith =>

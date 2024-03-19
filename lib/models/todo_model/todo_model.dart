@@ -7,8 +7,7 @@ part 'todo_model.freezed.dart';
 @freezed
 class TodoModel with _$TodoModel {
   const factory TodoModel({
-    required String firstName,
-    required String lastName,
-    required int age,
+    required int id,
+    required String task,
   }) = _TodoModel;
 }

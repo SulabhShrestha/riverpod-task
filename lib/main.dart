@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_task/routing/routing.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -16,6 +17,23 @@ class MyApp extends StatelessWidget {
         appBarTheme: AppBarTheme(
             backgroundColor: Colors.blue.shade600,
             foregroundColor: Colors.white),
+        dialogTheme: DialogTheme(
+          shape: ContinuousRectangleBorder(
+              borderRadius: BorderRadius.circular(24)),
+        ),
+        inputDecorationTheme: InputDecorationTheme(
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: const BorderSide(color: Colors.black),
+          ),
+          isDense: true,
+          contentPadding:
+              const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: const BorderSide(color: Colors.black),
+          ),
+        ),
         primarySwatch: Colors.blue,
         pageTransitionsTheme: const PageTransitionsTheme(builders: {
           TargetPlatform.android: CupertinoPageTransitionsBuilder()
