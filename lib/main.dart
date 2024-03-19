@@ -34,6 +34,12 @@ class MyApp extends StatelessWidget {
             borderSide: const BorderSide(color: Colors.black),
           ),
         ),
+        listTileTheme: ListTileThemeData(
+          shape: ContinuousRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+            side: BorderSide(color: Colors.black),
+          ),
+        ),
         primarySwatch: Colors.blue,
         pageTransitionsTheme: const PageTransitionsTheme(builders: {
           TargetPlatform.android: CupertinoPageTransitionsBuilder()

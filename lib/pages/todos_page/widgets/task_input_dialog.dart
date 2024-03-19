@@ -3,20 +3,35 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_task/models/todo_model/todo_model.dart';
 import 'package:riverpod_task/providers/todo_providers.dart';
 
+/// This dialog is versatile, works for both adding and editing the task
 class TaskInputDialog extends ConsumerStatefulWidget {
-  const TaskInputDialog({super.key});
+  final bool isToEditTask;
+  final TodoModel? model;
+  const TaskInputDialog({super.key, this.model, this.isToEditTask = false});
 
   @override
   ConsumerState<TaskInputDialog> createState() => _TaskInputDialogState();
 }
 
 class _TaskInputDialogState extends ConsumerState<TaskInputDialog> {
-  String task = "";
+  String task = "", title = '', stateOperationBtnTitle = '';
+
+  @override
+  void initState() {
+    task = widget.model?.task ?? "";
+    title = widget.isToEditTask ? "Edit task" : "Add new task";
+    stateOperationBtnTitle = widget.isToEditTask ? "Edit" : "Save";
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: const Text("Add new task"),
+      title: Text(title),
       content: TextField(
+        decoration: InputDecoration(
+          hintText: widget.model?.task,
+        ),
         onChanged: (text) {
           setState(() => task = text);
         },
@@ -39,11 +54,17 @@ class _TaskInputDialogState extends ConsumerState<TaskInputDialog> {
           onPressed: !checkForValidText()
               ? null
               : () {
-                  ref.read(todosProvider.notifier).addNewTodo(TodoModel(
-                      id: DateTime.now().millisecondsSinceEpoch, task: task));
+                  if (widget.isToEditTask) {
+                    ref
+                        .read(todosProvider.notifier)
+                        .editTodo(widget.model!.id, task);
+                  } else {
+                    ref.read(todosProvider.notifier).addNewTodo(TodoModel(
+                        id: DateTime.now().millisecondsSinceEpoch, task: task));
+                  }
                   Navigator.pop(context);
                 },
-          child: const Text("Save"),
+          child: Text(stateOperationBtnTitle),
         ),
       ],
     );

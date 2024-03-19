@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_task/models/todo_model/todo_model.dart';
+import 'package:riverpod_task/pages/todos_page/widgets/display_todo_tile.dart';
 import 'package:riverpod_task/pages/todos_page/widgets/task_input_dialog.dart';
 import 'package:riverpod_task/providers/todo_providers.dart';
 
@@ -22,7 +23,7 @@ class TodosPage extends ConsumerWidget {
               itemBuilder: (_, index) {
                 var model = todos[index];
                 debugPrint("Inside: $model");
-                return Text(model.task);
+                return DisplayTodoTile(model: todos[index]);
               });
         },
       ),
