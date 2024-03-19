@@ -16,8 +16,6 @@ class PhotosViewModel {
       }
       return photoModels;
     } catch (e) {
-      print(e);
-
       rethrow;
     }
   }

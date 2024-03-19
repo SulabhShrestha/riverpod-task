@@ -38,14 +38,14 @@ class DisplayTodoTile extends ConsumerWidget {
                         );
                       });
                 },
-                icon: Icon(Icons.edit),
+                icon: const Icon(Icons.edit),
               ),
               IconButton(
                 color: Colors.red,
                 onPressed: () {
                   ref.read(todosProvider.notifier).deleteTodo(model.id);
                 },
-                icon: Icon(Icons.delete),
+                icon: const Icon(Icons.delete),
               ),
             ],
           ),

@@ -1,8 +1,6 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_task/providers/photos_provider.dart';
-import 'package:riverpod_task/view_model/photos_view_model.dart';
 
 class PhotosPage extends ConsumerWidget {
   const PhotosPage({super.key});
@@ -11,7 +9,9 @@ class PhotosPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final photosProv = ref.watch(photosProvider);
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text("Photos Page"),
+      ),
       body: photosProv.when(
           data: (data) {
             return ListView.builder(
@@ -24,7 +24,7 @@ class PhotosPage extends ConsumerWidget {
                 });
           },
           error: (_, __) => const Text("Something went wrong"),
-          loading: () => const CircularProgressIndicator()),
+          loading: () => const Center(child: CircularProgressIndicator())),
     );
   }
 }

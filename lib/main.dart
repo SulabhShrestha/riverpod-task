@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
         listTileTheme: ListTileThemeData(
           shape: ContinuousRectangleBorder(
             borderRadius: BorderRadius.circular(12),
-            side: BorderSide(color: Colors.black),
+            side: const BorderSide(color: Colors.black),
           ),
         ),
         primarySwatch: Colors.blue,
