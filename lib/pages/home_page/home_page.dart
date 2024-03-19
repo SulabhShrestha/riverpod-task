@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:riverpod_task/pages/home_page/widgets/gradient_button.dart';
 
 class HomePage extends StatelessWidget {
@@ -13,30 +14,36 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             GradientButton(
-              child: Text(
+              child: const Text(
                 "Posts",
                 style: TextStyle(color: Colors.white),
               ),
-              onTap: () {},
+              onTap: () {
+                context.go("/posts");
+              },
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             GradientButton(
-              child: Text(
+              child: const Text(
                 " Photos",
                 style: TextStyle(color: Colors.white),
               ),
-              onTap: () {},
+              onTap: () {
+                context.go("/photos");
+              },
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             GradientButton(
-              linearGradient: LinearGradient(
+              linearGradient: const LinearGradient(
                 colors: [Colors.red, Colors.orange],
               ),
-              child: Text(
+              child: const Text(
                 "Todos",
                 style: TextStyle(color: Colors.white),
               ),
-              onTap: () {},
+              onTap: () {
+                context.go("/todos");
+              },
             ),
           ],
         ),

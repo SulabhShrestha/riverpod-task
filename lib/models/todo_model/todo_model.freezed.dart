@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'comment_model.dart';
+part of 'todo_model.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,35 +14,29 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-CommentModel _$CommentModelFromJson(Map<String, dynamic> json) {
-  return _CommentModel.fromJson(json);
-}
-
 /// @nodoc
-mixin _$CommentModel {
+mixin _$TodoModel {
   String get firstName => throw _privateConstructorUsedError;
   String get lastName => throw _privateConstructorUsedError;
   int get age => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CommentModelCopyWith<CommentModel> get copyWith =>
+  $TodoModelCopyWith<TodoModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CommentModelCopyWith<$Res> {
-  factory $CommentModelCopyWith(
-          CommentModel value, $Res Function(CommentModel) then) =
-      _$CommentModelCopyWithImpl<$Res, CommentModel>;
+abstract class $TodoModelCopyWith<$Res> {
+  factory $TodoModelCopyWith(TodoModel value, $Res Function(TodoModel) then) =
+      _$TodoModelCopyWithImpl<$Res, TodoModel>;
   @useResult
   $Res call({String firstName, String lastName, int age});
 }
 
 /// @nodoc
-class _$CommentModelCopyWithImpl<$Res, $Val extends CommentModel>
-    implements $CommentModelCopyWith<$Res> {
-  _$CommentModelCopyWithImpl(this._value, this._then);
+class _$TodoModelCopyWithImpl<$Res, $Val extends TodoModel>
+    implements $TodoModelCopyWith<$Res> {
+  _$TodoModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -74,22 +68,22 @@ class _$CommentModelCopyWithImpl<$Res, $Val extends CommentModel>
 }
 
 /// @nodoc
-abstract class _$$CommentModelImplCopyWith<$Res>
-    implements $CommentModelCopyWith<$Res> {
-  factory _$$CommentModelImplCopyWith(
-          _$CommentModelImpl value, $Res Function(_$CommentModelImpl) then) =
-      __$$CommentModelImplCopyWithImpl<$Res>;
+abstract class _$$TodoModelImplCopyWith<$Res>
+    implements $TodoModelCopyWith<$Res> {
+  factory _$$TodoModelImplCopyWith(
+          _$TodoModelImpl value, $Res Function(_$TodoModelImpl) then) =
+      __$$TodoModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String firstName, String lastName, int age});
 }
 
 /// @nodoc
-class __$$CommentModelImplCopyWithImpl<$Res>
-    extends _$CommentModelCopyWithImpl<$Res, _$CommentModelImpl>
-    implements _$$CommentModelImplCopyWith<$Res> {
-  __$$CommentModelImplCopyWithImpl(
-      _$CommentModelImpl _value, $Res Function(_$CommentModelImpl) _then)
+class __$$TodoModelImplCopyWithImpl<$Res>
+    extends _$TodoModelCopyWithImpl<$Res, _$TodoModelImpl>
+    implements _$$TodoModelImplCopyWith<$Res> {
+  __$$TodoModelImplCopyWithImpl(
+      _$TodoModelImpl _value, $Res Function(_$TodoModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -99,7 +93,7 @@ class __$$CommentModelImplCopyWithImpl<$Res>
     Object? lastName = null,
     Object? age = null,
   }) {
-    return _then(_$CommentModelImpl(
+    return _then(_$TodoModelImpl(
       firstName: null == firstName
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
@@ -117,13 +111,10 @@ class __$$CommentModelImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$CommentModelImpl with DiagnosticableTreeMixin implements _CommentModel {
-  const _$CommentModelImpl(
-      {required this.firstName, required this.lastName, required this.age});
 
-  factory _$CommentModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CommentModelImplFromJson(json);
+class _$TodoModelImpl with DiagnosticableTreeMixin implements _TodoModel {
+  const _$TodoModelImpl(
+      {required this.firstName, required this.lastName, required this.age});
 
   @override
   final String firstName;
@@ -134,14 +125,14 @@ class _$CommentModelImpl with DiagnosticableTreeMixin implements _CommentModel {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CommentModel(firstName: $firstName, lastName: $lastName, age: $age)';
+    return 'TodoModel(firstName: $firstName, lastName: $lastName, age: $age)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'CommentModel'))
+      ..add(DiagnosticsProperty('type', 'TodoModel'))
       ..add(DiagnosticsProperty('firstName', firstName))
       ..add(DiagnosticsProperty('lastName', lastName))
       ..add(DiagnosticsProperty('age', age));
@@ -151,7 +142,7 @@ class _$CommentModelImpl with DiagnosticableTreeMixin implements _CommentModel {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CommentModelImpl &&
+            other is _$TodoModelImpl &&
             (identical(other.firstName, firstName) ||
                 other.firstName == firstName) &&
             (identical(other.lastName, lastName) ||
@@ -159,32 +150,21 @@ class _$CommentModelImpl with DiagnosticableTreeMixin implements _CommentModel {
             (identical(other.age, age) || other.age == age));
   }
 
-  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, firstName, lastName, age);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CommentModelImplCopyWith<_$CommentModelImpl> get copyWith =>
-      __$$CommentModelImplCopyWithImpl<_$CommentModelImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CommentModelImplToJson(
-      this,
-    );
-  }
+  _$$TodoModelImplCopyWith<_$TodoModelImpl> get copyWith =>
+      __$$TodoModelImplCopyWithImpl<_$TodoModelImpl>(this, _$identity);
 }
 
-abstract class _CommentModel implements CommentModel {
-  const factory _CommentModel(
+abstract class _TodoModel implements TodoModel {
+  const factory _TodoModel(
       {required final String firstName,
       required final String lastName,
-      required final int age}) = _$CommentModelImpl;
-
-  factory _CommentModel.fromJson(Map<String, dynamic> json) =
-      _$CommentModelImpl.fromJson;
+      required final int age}) = _$TodoModelImpl;
 
   @override
   String get firstName;
@@ -194,6 +174,6 @@ abstract class _CommentModel implements CommentModel {
   int get age;
   @override
   @JsonKey(ignore: true)
-  _$$CommentModelImplCopyWith<_$CommentModelImpl> get copyWith =>
+  _$$TodoModelImplCopyWith<_$TodoModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

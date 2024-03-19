@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:riverpod_task/models/comment_model.dart';
 import 'package:riverpod_task/routing/routing.dart';
 
 void main() {
-  var model =
-      const CommentModel(firstName: "firstName", lastName: "lastName", age: 12);
-  debugPrint(model.toString());
   runApp(const MyApp());
 }
 
@@ -21,6 +17,9 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.blue.shade600,
             foregroundColor: Colors.white),
         primarySwatch: Colors.blue,
+        pageTransitionsTheme: const PageTransitionsTheme(builders: {
+          TargetPlatform.android: CupertinoPageTransitionsBuilder()
+        }),
       ),
       routerConfig: routing,
     );
