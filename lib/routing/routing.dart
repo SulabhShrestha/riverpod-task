@@ -1,9 +1,9 @@
 import 'package:go_router/go_router.dart';
-import 'package:riverpod_task/pages/home_page/home_page.dart';
-import 'package:riverpod_task/pages/photos_page/photos_page.dart';
-import 'package:riverpod_task/pages/posts_page/posts_page.dart';
-import 'package:riverpod_task/pages/search_page/search_page.dart';
-import 'package:riverpod_task/pages/todos_page/todos_page.dart';
+import 'package:riverpod_task/views/home_page/home_page.dart';
+import 'package:riverpod_task/views/photos_page/photos_page.dart';
+import 'package:riverpod_task/views/posts_page/posts_page.dart';
+import 'package:riverpod_task/views/search_page/search_page.dart';
+import 'package:riverpod_task/views/todos_page/todos_page.dart';
 
 // GoRouter configuration
 final routing = GoRouter(
