@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 import 'package:riverpod_task/views/posts_page/widgets/post_card.dart';
 import 'package:riverpod_task/providers/posts_provider.dart';
 import 'package:riverpod_task/providers/search_text_provider.dart';
+
+import 'package:riverpod_task/views/posts_page/widgets/smart_app_bar.dart';
 
 class PostsPage extends ConsumerWidget {
   const PostsPage({super.key});
@@ -15,27 +16,7 @@ class PostsPage extends ConsumerWidget {
     final searchTextProv = ref.watch(searchTextProvider);
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Posts Page"),
-        actions: [
-          // Search button
-          if (searchTextProv.isEmpty)
-            IconButton(
-              onPressed: () {
-                context.goNamed("search_page");
-              },
-              icon: const Icon(Icons.search),
-            ),
-
-          if (searchTextProv.isNotEmpty)
-            IconButton(
-              onPressed: () {
-                ref.read(searchTextProvider.notifier).state = "";
-              },
-              icon: const Icon(Icons.close),
-            ),
-        ],
-      ),
+      appBar: const SmartAppBar(),
       body: postsProv.when(
           data: (data) {
             return ListView.builder(
