@@ -32,14 +32,8 @@ This task follows the standard MVVM architecture + services, where the main laye
 
 ## Videos
 
-<span>Posts
-    <iframe allow="fullscreen" allowfullscreen height="380" src="https://streamable.com/e/jakdd5?" width="190" style="border:none;"></iframe>
-</span>
+https://streamable.com/e/jakdd5
 
-<span>Todo
-    <iframe allow="fullscreen" allowfullscreen height="380" src="https://streamable.com/e/ogf7ju?" width="190" style="border:none;"></iframe>
-</span>
+https://streamable.com/e/ogf7ju
 
-<span>Photos
-    <iframe allow="fullscreen" allowfullscreen height="380" src="https://streamable.com/e/dmyt6j?" width="190" style="border:none;"></iframe>
-</span>
+https://streamable.com/e/dmyt6j
