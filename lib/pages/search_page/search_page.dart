@@ -16,6 +16,7 @@ class _SearchPageState extends ConsumerState<SearchPage> {
     return Scaffold(
       appBar: AppBar(
         title: TextField(
+          autofocus: true,
           controller: _searchController,
           onSubmitted: (value) {
             if (value.isEmpty) return;
