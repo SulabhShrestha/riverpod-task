@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:riverpod_task/providers/posts_provider.dart';
+import 'package:riverpod_task/providers/search_text_provider.dart';
 
 class PostsPage extends ConsumerWidget {
   const PostsPage({super.key});
@@ -9,9 +11,19 @@ class PostsPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final postsProv = ref.watch(postsProvider);
+    debugPrint("Search text provider: ${ref.watch(searchTextProvider)}");
     return Scaffold(
       appBar: AppBar(
         title: const Text("Posts Page"),
+        actions: [
+          // Search button
+          IconButton(
+            onPressed: () {
+              context.goNamed("search_page");
+            },
+            icon: const Icon(Icons.search),
+          ),
+        ],
       ),
       body: postsProv.when(
           data: (data) {
@@ -39,7 +51,7 @@ class PostsPage extends ConsumerWidget {
                   );
                 });
           },
-          error: (_, __) => const Text("Something went wrong"),
+          error: (_, __) => const Center(child: Text("Something went wrong")),
           loading: () => const Center(child: CircularProgressIndicator())),
     );
   }

@@ -14,7 +14,6 @@ class PostsViewModel {
       List<PostModel> postsModel = [];
       for (var data in response) {
         postsModel.add(PostModel.fromJson(data));
-        debugPrint("Length: ${postsModel.length}");
       }
       return postsModel;
     } catch (e) {

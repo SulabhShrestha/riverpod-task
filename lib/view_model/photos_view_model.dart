@@ -12,7 +12,6 @@ class PhotosViewModel {
       List<PhotoModel> photoModels = [];
       for (var data in response) {
         photoModels.add(PhotoModel.fromJson(data));
-        debugPrint("Length: ${photoModels.length}");
       }
       return photoModels;
     } catch (e) {
