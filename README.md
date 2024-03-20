@@ -32,8 +32,8 @@ This task follows the standard MVVM architecture + services, where the main laye
 
 ## Videos
 
-https://streamable.com/e/jakdd5
+* Posts: https://streamable.com/e/jakdd5
 
-https://streamable.com/e/ogf7ju
+* Todo: https://streamable.com/e/ogf7ju
 
-https://streamable.com/e/dmyt6j
+* Photos: https://streamable.com/e/dmyt6j
